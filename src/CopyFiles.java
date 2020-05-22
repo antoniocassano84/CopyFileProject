@@ -10,8 +10,10 @@ public class CopyFiles {
     try  (BufferedReader br = new BufferedReader(new FileReader(sourceFileName));
           PrintWriter pw = new PrintWriter(new FileWriter(destinationFileName))) {
       String line;
-      while ((line = br.readLine()) != null)
+      while ((line = br.readLine()) != null) {
+        line += " ENDING ";
         pw.println(line);
+      }
     } catch (Exception e) {
       e.printStackTrace();
     }
